@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+<input type="text" placeholder="enter name" formControlName="user">
+<br>
+<span style="color: red;" *ngIf="user && user.invalid">User input is not valid</span>
+<br>
+<input type="password" placeholder="enter password" formControlName="password">
+<br>
+<span style="color: red;" *ngIf="password && password.invalid && password.touched">Password filed is not valid</span>
+<br>
+<button [disabled]="user?.invalid || password?.invalid">Login</button>
+<br>
+
+<button (click)="deneme()">Değişken Kontrol butonu</button>
+
+</form>
